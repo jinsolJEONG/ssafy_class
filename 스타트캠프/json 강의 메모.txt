@@ -1,0 +1,44 @@
+3일차
+JSON
+//
+[
+  {
+    "name": "jinsol",
+    "age": 30,
+    "hobby": ["운동", "게임"]
+  },
+  {
+    "name": "jinsol",
+    "age": 20,
+    "hobby": ["운동", "게임"]
+  }
+]
+//
+배열은 항상 같은 형태로..[배열안에객체]
+AJAX에서 활용됨
+프래임워크 라이브러리 api(리모컨) -> 코드모음집
+=================================
+rest api -> HTTP 프로토콜로 JSON을 주고받는 원칙
+GET /api/v1/movies ->(형식 고정) JSON으로 된 영화 정보가 들어오겠군!
+=================================
+(CREATE READ UPDATE DELETE)-세상만물은 C R U D 로 통용됨.
+http 요청 메서드 
+{ GET - READ
+POST - CREATE
+ PUT - UPDATE(수정 대상 전체)
+PATCH - UPDATE(수정 대상 한개)
+DELETE - DELETE }
+ex)
+GET /movies
+GET /movies/1534
+POST /movies
+PATCH /movies/1534
+DELETE /movies/1534
+
+=================================
+
+공공데이터 포털 - 정부에서 제공하는 api 사용 가능
+JSON 으로 요청을 보내고
+JSON으로 응답을 받아서
+원하는 데이터를 뽑아냄..
+

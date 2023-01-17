@@ -1,0 +1,16 @@
+1/16
+w3schools , mdn 사이트 참고
+div, span - 할거없을때 그냥 태그임
+link - css파일 불러오기
+
+./아이언맨.jpg(현재경로) -> 상대경로 
+../아이언맨.jpg(바탕화면) -> 상대경로 
+/아이언맨.jpg ->절대경로
+alt+마우스클릭 = 다중클릭
+ctrlD 다중선택
+input
+
+############css border 시험에 나옴
+############ box shadow
+ ############ Holy Grail Layout
+############ 한가운데 정렬

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      height: 1200px;
+    }
+    .absolute{
+      background-color: aliceblue;
+      /* 선언시 width가 inline 형태로 줄어듬 
+      fixed와 다르게 고정되지 않는다
+      relative: 원래위치가 기준점
+      fixed: 원래 위치와 상관없이 최상위가 기준점
+      absolute: 선택적(부모 요소에 3차원 요소가 있다면 그 요소가 기준점,
+      3차원 요소가없다면 그 상위가 기준점(끝까지 없으면 최상위가 기준점)*/
+      position: absolute;
+      right: 10px;
+    }
+    .parent{
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: aquamarine;
+    }
+    .child{
+      position: absolute;
+      right: 10px;
+      /* bottom: 0; */
+      background-color: brown;
+    }
+  
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="absolute">
+    absolute
+  </div>
+  <div class="parent">
+    <div class="child">child</div>
+  </div>
+</body>
+</html>
