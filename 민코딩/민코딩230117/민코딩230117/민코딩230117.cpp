@@ -94,3 +94,23 @@
 //    }
 //    return 0;
 //}
+
+
+
+//#include <iostream>
+//using namespace std;
+//
+//int main(){
+//    
+//    int arr[6] = { 3,4,2,5,7,9 };
+//    int a, b, s;
+//    cin >> a >> b;
+//    s = arr[b];
+//    arr[b] = arr[a];
+//    arr[a] = s;
+//    for (int i = 0; i < 6; i++)
+//    {
+//        cout << arr[i];
+//    } 
+//    return 0;
+//}
