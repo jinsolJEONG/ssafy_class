@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My title</title>
+</head>
+<body>
+
+  <h1>A heading</h1>
+  <a class="mac" href="mcdonalds.co.kr">Link text</a>
+
+  <script>
+    document.children[0].children[1].children[0].textContent = "abc";
+
+    //queryselector("선택자") class . id #
+
+    const h1Tag = document.querySelector("hi");
+    console.log(h1Tag);
+
+    const mac = document.querySelector(".mac")
+    console.log(mac);
+    console.log(mac. textContent);
+    mac.textContent = "맥도날드" ;
+    mac.href = "https://www.naver.com";
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+querySelector : 화면에 있는 원하는 요소를 가져올 때 쓰는 기준(선택자)
+onclick은 나중에 사용
+순수자바스크립트 = 바닐라
+
+# 1-1 실습
+  const result =  document.querySelector("#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(1) > div.box-contents > div > strong")
+  result
+  console.log(result.textContent);
+
+  2. 2등 영화 정보 변경
+  const title2 = document.querySelector("div.wrap-movie-chart li:nth-child(2) > div.box-contents > a > strong");
+  const rate2 = document.querySelector("div.wrap-movie-chart li:nth-child(2) > div.box-contents > div > strong");
+  const date2 = document.querySelector("div.wrap-movie-chart li:nth-child(2) > div.box-contents > span.txt-info > strong");
+  title2.textContent = "삼겹살과 그대라면";
+  rate2.textContent = "예매율5%";
+  date2.textContent = "1985.07.07";
+  
+  3. 3등 과 1등 정보 변경
+    - 1. 이미지 스왑
+  const t1img = document.querySelector("#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(1) > div.box-image > a > span > img");
+  const t3img = document.querySelector("#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(3) > div.box-image > a > span > img");
+  
+  let tswap = t1img.src;
+  t1img.src = t3img.src;
+  t3img.src = tswap;
+  
+    - 2. 글자 정보 모두 스왑
+  
+  const t3txt = document.querySelectorAll("#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(3) > div.box-contents");
+  const t1txt = document.querySelectorAll("#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(1) > div.box-contents");
+  
+  let tswap2 = t1txt.textContent;
+  t1txt.textContent = t3txt.textContent;
+  t3txt.textContent = tswap2;
+
+### chapter2. event 와 dom
+  # 1. 이벤트
+      1) 콜백함수
+      : 예약의 목적으로 조건이 맞는 경우에만 함수 실행
+      - 뒤에 소괄호 안붙임
+      2) 이벤트 리스너
+      - 이벤트 핸들러랑 유사하다 생각해도 무방
+          =================================
+          <button>나를 클릭해</button>
+          <script>
+            function showMessage(){
+              console.log("안녕!!");
+            }
+            const btn = document.querySelector("button");
+            btn.addEventListener("click", showMessage);
+          </script>
+          =================================
+      - 메서드(addEventListener) 첫번째는 이벤트의 종류
+      + 이벤트 종류(클릭, 키보드입력 등 참고.. https://www.w3schools.com/jsref/dom_obj_event.asp)
+      - 버튼말고도 다른 태그도 가능
+          =================================
+          <div>나를 클릭해</div>
+          <script>
+            function showMessage(){
+            console.log("안녕!!");
+            }
+            const div = document.querySelector("div");
+            div.addEventListener("click", showMessage);
+          </script>
+          =================================
+      - 함수를 굳이 재사용 안하면 안부르고도 쓸수 있음
+          =================================
+          <div>나를 클릭해</div>
+          <script>
+            const div = document.querySelector("div");
+            div.addEventListener("click", function(){
+            console.log("안녕");
+            });
+          </script>
+          =================================
+  # 2. create element
+      1) 태그 생성
+      - document.createElment('태그 이름')
+      2) 화면에 붙이기
+      -
+      3) 노드 안에 노드 밀어넣을때 
+      - 객체.append(Taget노드)
+      4) 속성 부여
+      - 객체.setattribute(속성이름, 송성 값) 
+      5) 이벤트 발생하면 화면에 출력하기
+          =================================
+          <button class="show-info-btn">나의 정보를 보여줘!</button>
+          <div class="info-wrapper"></div>
+          <script>
+            const showInfoBtn = document.querySelector(".show-info-btn");
+            const infoWrapper = document.querySelector(".info-wrapper");
+            showInfoBtn.addEventListener("click", function () {
+              infoWrapper.innerHTML = `
+                  <div class="title-msg">하이</div>
+                  <div>안녕</div>
+                  <div>너는 이름이 뭐니</div>
+                `;
+            });
+          </script>
+          =================================
+      6) 카멜(자바스크립트)/케밥()
+      7) change event(evt)
+          =================================
+          <h1>나의 결혼상대자 선택하자</h1>
+          <span>희망 배우자:</span>
+          <select>
+            <option value="">선택하세여</option>
+            <option value="아이유">아이유</option>
+            <option value="전지현">전지현</option>
+            <option value="장미란">장미란</option>
+            <option value="김민경">김민경</option>
+          </select>
+          <div class="result-txt"></div>
+          <script>
+            const sel = document.querySelector("select");
+            const resulTxt = document.querySelector(".result-txt");
+            sel.addEventListener("change", function(event){
+              resulTxt.textContent = event.target.value;
+            });
+          </script>
+          =================================
+      - 객체
+      - 이벤트를 실행될때의 모든 것을 표현
+      8) key event
+          =================================
+          <h1>엔터</h1>
+          <input type="text"> //닫는 태그 없음
+          <div class="result"></div>
+          <script>
+            const inputEl = document.querySelector("input");
+            const resultDiv = document.querySelector(".result");
+            inputEl.addEventListener("keydown", function(e){
+              resultDiv.textContent = e.code;
+            })
+          </script>
+          =================================
+      9) value 와 textContent 차이 (input쓸때 고려할점)
+      - textContent: 태그 열고 닫고 사이의 값
+      - value: ex. input에서 받는 값 
+      10) 이벤트 실습
+      - //이벤트 실습 파일 참고
+### chapter3.
+      1) classList(★★★)
+      - class를 추가하거나 제어를 쉽게
+      - classList 5개 쓸줄 알아야함 따로따로 쓰면됨
+          =================================
+          <style>
+            .font-red{
+              color: red;
+            }
+            .font-blue{
+              color: blue;
+            }
+          </style>
+          <title>Document</title>
+          </head>
+          <body>
+            <h1>HI</h1>
+            <button class="make-red-btn">빨간색으로 add</button>
+            <button class="make-black-btn">까만색으로 remove</button>
+            <button class="black-or-red-btn">검빨 toggle</button>
+            <button class="is-red">빨강있? contains</button>
+            <button class="red-to-blue">빨강을파랑으로 replace</button>
+            <script>
+              const h1 = document.querySelector("h1");
+              const makeRedBtn = document.querySelector(".make-red-btn");
+              const makeBlackBtn = document.querySelector(".make-black-btn");
+              const blackOrRedBtn = document.querySelector(".black-or-red-btn");
+              const isRed = document.querySelector(".is-red");
+              const redToBlue = document.querySelector(".red-to-blue");
+              makeRedBtn.addEventListener("click",function(){
+                h1.classList.add("font-red");
+              })
+              makeBlackBtn.addEventListener("click",function(){
+                h1.classList.remove("font-red");
+              })
+              blackOrRedBtn.addEventListener("click",function(){
+                h1.classList.toggle("font-red");
+              })
+              isRed.addEventListener("click",function(){
+                const flag = h1.classList.contains("font-red");
+                console.log(flag);
+              })
+              redToBlue.addEventListener("click",function(){
+                h1.classList.replace("font-red", "font-blue");
+              })
+            </script>
+          =================================
+
+      2) jQuery 는 안함. (임베는 특히 안씀)
+      3) bootstrap
+      - UI(디자인)를 위한 미리 쓰여진 javascript코드와 css코드 라이브러리
+      - CDN: 빠르게 해외 웹사이트에 접속하기 위한 기술
+          각국에 서버를 둔다.
+      - min.js(★): 띄어쓰기,엔터를 빼고 사이즈를 줄인거
+      - 단점: 비슷비슷한 디자인임.
+            :느리고 부담이 크고 문법을 새로 배워야함.
+      - 장점: es6이후로 장점이 사라짐.

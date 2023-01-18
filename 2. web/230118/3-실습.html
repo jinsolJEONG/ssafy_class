@@ -1,0 +1,28 @@
+<!-- 
+1. 버튼하나 만든다
+2. 버튼에 클릭이벤트 발생 시 showNumber 함수 실행
+  (이름 안붙여도 ㄱㅊ)
+3. showNumber 는 console.log() 대신 alert()를 사용해 메세지 출력
+결과 : 짠! 10000 입니다. (10000은 전역변수)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>버튼 클릭</button>
+  <script>
+    const a = 10000;
+    function showNumber(){
+      // alert("짠! " +a+ " 입니다"); 빽핑을 사용해보자
+      alert(`짠! ${a} 입니다`);
+    }
+    const btn = document.querySelector("button");
+    btn.addEventListener("click", showNumber);
+  </script>
+</body>
+</html>

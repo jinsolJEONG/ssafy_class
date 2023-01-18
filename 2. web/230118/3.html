@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>안녕 나는 자룡이</h1>
+    <div class="container">
+      <div class="img-wrapper">
+        <img src="./jony.jpg" alt="자룡이" height="300px"/>
+      </div>
+      <div class="hobby-list">
+        <h2>취미목록</h2>
+        <ul>
+          <li>영화보기</li>
+          <li>코딩하기</li>
+          <li>산책가기</li>
+          <li>게임하기</li>
+          <li>등산가기</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      // 1-1. 바꿔치기
+      // const img = document.querySelector("body > div > div.img-wrapper > img");//너무길다
+      // const img = document.querySelector(".img-wrapper > img");//이미지는 하나 밖에 없기 때문에 앞부분 다 날려도 됨
+      // console.dir(img); // 한번 찍어보자
+      // img.src = "./profile.jpg";
+
+      // const txt = document.querySelector("h1");
+      // txt.textContent = "하이";
+
+      // 1-2. 바꿔치기
+      // const imgWrapper = document.querySelector(".img-wrapper");
+      // const img = imgWrapper.querySelector("img");
+      // img.src = "./profile.jpg";
+
+      // 2. querySelectorAll
+      //.hobby-list > ul > li => .hobby-list li // '>'를 붙이면 바로 밑에 자식을 찾음
+      // const li = document.querySelectorAll(".hobby-list li");
+      // console.log(li);
+
+      // 2-1. 리스트를 바꿔보자
+      // const li = document.querySelectorAll(".hobby-list li");
+      // li[0].textContent = "싸피";
+
+      // 2-2. 일회성 바꿔치기 
+      // document.querySelectorAll(".hobby-list li")[2].textContent = "하하하";
+
+
+    </script>
+  </body>
+</html>
