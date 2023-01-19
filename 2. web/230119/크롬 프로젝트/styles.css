@@ -1,0 +1,141 @@
+* {
+  /* width를 책정할때 기본적으로 테두리 두께를 고려안하는데
+  border-box 옵션을 주게되면
+  테두리 두께까지 고려해해서 길이가 측정된다 */
+  box-sizing: border-box;
+}
+
+/* 다크모드 줄때는 블랙으로 */
+body{
+  background-color: white;
+}
+
+/* header */
+.header-nav-list-wrapper{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+  /* li의 dot파트 없애는 법 */
+  list-style: none;
+}
+.header-nav-list-wrapper > li{
+  margin-left: 10px;
+}
+
+.toggle-button{
+  border: 1px solid #eee;
+  background-color: black;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* mian */
+.main-container{
+  /* 이미지 정렬 텍스트 정렬 영향*/
+  text-align: center;
+  width: 50%;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* 50% 50% 주면 기준점이 0점인데 x축 y축 4사분면임
+  trasform 해줘야함 */
+  transform: translate(-50%, -50%);
+  /* border: 1px solid black; -> 배치 자리 잡을때 레이아웃 */
+}
+/* 로고파트 */
+.image-logo{
+  width: 272px;
+}
+/* 검색파트 */
+.search-container{
+  position: relative;
+  margin-top: 50px;
+}
+.search-icon{
+  width: 17px;
+  position: absolute;
+  top: 13px;
+  left: 18px;
+
+}
+#search-input{
+  width: 100%;
+  height: 44px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding-left: 50px;
+}
+
+/* 아이콘 파트 */
+.bookmark-section{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.bookmark-wrapper{
+  display: flex;
+  /* 자동정렬말고 하나씩 따로 */
+  flex-wrap: wrap;
+  justify-content: center;
+  /* 늘어날수 있는 최대 픽셀 */
+  max-width: 600px;
+  /* 최소픽셀 */
+  min-width: 60px;
+}
+.bookmark-item{
+  margin-top: 30px;
+  width: 112px;
+  /* a tag 밑줄 없애기 */
+  text-decoration: none;
+  width: 112px;
+  text-align: center;
+  /* 수직수평 설정할떄 flex만큼 편한게 없음 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 마우스 가져다 대면 달라지게 */
+.bookmark-item:hover{
+  cursor: pointer;
+  /* 투명도 최대 1 높을수록 불투명 */
+  opacity: 0.5;
+}
+.img-icon-wrapper{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f2f3f5;
+  font-size: 24px;
+  /* 아이콘 중앙정렬 세트 코드(부모한테 줘야하니까) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 아이콘 이미지만 설정하기 */
+.img-icon-wrapper > img{
+  width: 60%;
+  height: 60%;
+}
+.bookmark-text{
+  margin-top: 5px;
+  color: black;
+}
+/* 다크모드 파트 */
+.body-background-darkmode{
+  background-color: black;
+}
+.toggle-button-darkmode{
+  background-color: white;
+}
+.img-icon-wrapper-darkmode{
+  background-color: white;
+}
+.text-darkmode{
+  color: white;
+}
