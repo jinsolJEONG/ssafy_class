@@ -1,0 +1,37 @@
+#알고리즘 코딩테스트는 - 효율적으로 문제해결
+
+1. 배열
+  1) DAT(★★★) : Direct Access Table  
+    -> 문자를 기반으로 해당 문자가 몇개인가?
+    - 배열의 index에 의미를 부여
+    - int DAT[]; / index : 문자 / value : 해당 문자 몇개?
+        =====================================
+        int main(){
+          char temp[100];
+          cin >> temp;
+          // 기본적인 문자(아스키코드) : 128가지 
+          // char: 256가지
+          int DAT[256] = {0,};
+          for(int i =0; temp[i]; i++){
+            char now = temp[i];
+            DAT[now]++;
+          }
+          return 0;
+        }
+        =====================================
+  2) DA : Direction array
+
+2. 디버깅 
+  1) 단축키
+    - 1단계
+      F10 : step over 
+      F11: step Into
+      ctrl + f10 : cursor 까지 실행
+      shift + f10 : stepping 종료
+    - 2단계
+      F9 : breakpoint 이후
+      F5 : run (breakpoint에서 멈춤)
+  2) 조사식
+    - 메뉴 : (디버그 > 창 > 조사식 > 조사식1) 누르면 나옴
+
+  
