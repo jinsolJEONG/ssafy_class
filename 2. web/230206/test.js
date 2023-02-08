@@ -48,5 +48,3 @@ class Avengers extends Person{
   }
 
 }
-
-1795 2-1

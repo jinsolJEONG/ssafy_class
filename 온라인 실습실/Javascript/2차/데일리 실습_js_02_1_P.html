@@ -12,28 +12,27 @@
       4. 해당 코드를 key, value를 한번씩만 작성하도록 리팩토링하시오.
     */
 
+
+    
     // 1
     const name = 'Tom'
-    console.log('Hi, my name is' + name)
+    console.log(`Hi, my name is ${name}`)
 
     // 2
-    function add(x, y) {
-      return x + y
-    }
+    const add = (x,y) => x+y;
 
     // 3
     const tom = {
       name: 'Tom',
-      introduce: function () {
-        console.log('Hi, my name is' + this.name)
-      }
+      introduce: () => {console.log('Hi, my name is ' + tom.name)}
     }
+    tom.introduce()
 
     // 4
-    const url = 'https://test.com'
-    const data = { message: 'Hello World!' }
-
-    const request = { url: url, data: data }
+    const request ={
+      url: 'https://test.com', 
+      data: { message: 'Hello World!' }
+    }
   </script>
 </body>
 </html>
