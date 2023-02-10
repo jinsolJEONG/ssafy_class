@@ -12,44 +12,76 @@
     */
 
     // 1-1
+    // const savedFile = {
+    //   name: 'profile',
+    //   extension: 'jpg',
+    //   size: 29930
+    // }
+    // function fileSummary(file) {
+    //     console.log(`The file ${file.name}.${file.extension} is size of ${file.size} bytes.`)
+    // }
+    // fileSummary(savedFile);
     const savedFile = {
       name: 'profile',
       extension: 'jpg',
       size: 29930
     }
-    function fileSummary(file) {
-        console.log(`The file ${file.name}.${file.extension} is size of ${file.size} bytes.`)
-    }
-    fileSummary(savedFile);
+    const { name, extension, size } = savedFile;
+    console.log(`The file ${name}.${extension} is size of ${size} bytes.`);
+
 
     // 1-2
+    // const data = {
+    //   username: 'myName',
+    //   password: 'myPassword',
+    //   email: 'my@mail.com',
+    // }
+    // const username = data.username
+    // const password = data.password
+    // const email = data.email
     const data = {
       username: 'myName',
       password: 'myPassword',
       email: 'my@mail.com',
     }
+    const { username, password, email } = data;
 
-    const username = data.username
-    const password = data.password
-    const email = data.email
-    
+
     // 2
-    function addNumbers(a,b,c,d,e) {
-      const numbers = [a, b, c, d, e];
-      return numbers.reduce((sum, number) => { 
-        return sum + number
-      }, 0)
-    }
+    // function addNumbers(a,b,c,d,e) {
+    //   const numbers = [a, b, c, d, e];
+    //   return numbers.reduce((sum, number) => { 
+    //     return sum + number
+    //   }, 0)
+    // }
+    const numbers = [1,2,3,4,5];
+    const [one, ...another] = numbers;
+    const sumNum = numbers.reduce((sum, another)=>{
+      return sum + another;
+    });
+    console.log(sumNum);
+
+
 
     // 3-1
+    // const defaultColors = ['red', 'green', 'blue'];
+    // const favoriteColors = ['navy', 'black', 'gold', 'white']
+    // const palette = defaultColors.concat(myFavoriteColors);
     const defaultColors = ['red', 'green', 'blue'];
-    const favoriteColors = ['navy', 'black', 'gold', 'white']
-    const palette = defaultColors.concat(myFavoriteColors);
+    const favoriteColors = ['navy', 'black', 'gold', 'white'];
+    const palette = [...defaultColors, ...favoriteColors, 'myFavoriteColors'];
+
+
 
     // 3-2
+    // const info1 = { name: 'Tom', age: 30 }
+    // const info2 = { isMarried: true, balance: 3000 }
+    // const fullInfo = Object.assign(info1, info2)
     const info1 = { name: 'Tom', age: 30 }
     const info2 = { isMarried: true, balance: 3000 }
-    const fullInfo = Object.assign(info1, info2)
+    const fullInfo = {...info1, ...info2};
+
+
   </script>
 </body>
 </html>
