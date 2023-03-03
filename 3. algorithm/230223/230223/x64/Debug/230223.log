@@ -1,0 +1,4 @@
+﻿  230223.cpp
+C:\Users\SSAFY\Desktop\진솔\3. algorithm\230223\230223\230223.cpp(49,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SSAFY\Desktop\진솔\3. algorithm\230223\230223\230223.cpp(50,16): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  230223.vcxproj -> C:\Users\SSAFY\Desktop\진솔\3. algorithm\230223\x64\Debug\230223.exe

@@ -1,0 +1,3 @@
+﻿  230221.cpp
+C:\Users\SSAFY\Desktop\진솔\3. algorithm\230221\230221\230221.cpp(23,13): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  230221.vcxproj -> C:\Users\SSAFY\Desktop\진솔\3. algorithm\230221\x64\Debug\230221.exe
